@@ -7,6 +7,7 @@ const schema = buildSchema(`
   type Query {
     hello: String,
     user(id: Int!, name: String): User
+    users: [User]
   }
 
   type User{
@@ -22,6 +23,9 @@ type Address{
 }  
 
 `);
+
+
+
 
 
 // handlers
@@ -40,6 +44,15 @@ const getUser = function (args) {
     return user;
 }
 
+const getUsers = function () {
+    return users =[
+        getUser({"id": 240, "name": "Anil"}),
+    
+    getUser({"id": 2401, "name": "Verma"})
+];
+
+  }
+  
 
 
 // Define a resolver
@@ -47,7 +60,8 @@ const root = {
   hello: () => {
     return 'Hello, world!';
   },
-  user: getUser
+  user: getUser,
+  users: getUsers
 };
 
 // Create an Express app
