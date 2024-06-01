@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/app.js",
+    "gs": "npx ruru -SP -p 4001 -e http://localhost:4000/graphql"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,8 @@
   "dependencies": {
     "express": "^4.19.2",
     "graphql": "^15.8.0",
-    "graphql-http": "^1.22.1"
+    "graphql-http": "^1.22.1",
+    "mongodb": "^6.7.0",
+    "mongodb-memory-server": "^9.3.0"
   }
 }
